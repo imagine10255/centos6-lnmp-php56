@@ -5,18 +5,13 @@
 \cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
 \cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
 
-# Start PHP-FPM
-/etc/rc.d/init.d/php-fpm start
-
-# Start Nginx
-/etc/rc.d/init.d/nginx start
-
 # 檢查服務未啟動時執行
 for SERVICE in nginx php-fpm
 do
   if ps ax | grep -v grep | grep $SERVICE > /dev/null
   then
      #echo "service $SERVICE runing";
+     break;
   else
      service $SERVICE start;
   fi
