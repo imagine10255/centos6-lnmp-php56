@@ -40,4 +40,4 @@ do
 done
 
 # 清空初始執行設定資料
-cat /dev/null > /home/docker_bash/init-bashrc.sh
+cat /dev/null > /home/docker/bash/init-bashrc.sh
