@@ -2,12 +2,9 @@ FROM centos:6
 MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 
 
-ENV DB_USER=root \
-    DB_PASSWORD=P@ssw0rd \
-    DB_DIR=/usr/local/mariadb/var \
-    APP_DIR=/home/wwwroot/website_files \
+ENV APP_DIR=/home/wwwroot \
     LOG_DIR=/home/wwwlogs \
-    HOST_CONFIG=/home/wwwconfig
+    CONF_DIR=/home/wwwconfig
 
 
 # Install develop tool
@@ -56,7 +53,7 @@ EXPOSE 80 81 82
 
 
 # Volume for web server install
-VOLUME ["${DB_DIR}","${APP_DIR}","${LOG_DIR}","${HOST_CONFIG}"]
+VOLUME ["${APP_DIR}","${LOG_DIR}","${CONF_DIR}"]
 
 
 # Start run shell

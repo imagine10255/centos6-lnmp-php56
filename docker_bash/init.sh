@@ -18,4 +18,4 @@ do
 done
 
 # 清空初始執行設定資料
-cat /dev/null > /opt/bash/init.sh
+cat /dev/null > /home/docker_bash/init.sh
