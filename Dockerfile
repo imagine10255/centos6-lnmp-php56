@@ -34,26 +34,26 @@ RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xm
 RUN yum -y --enablerepo=nginx install nginx
 
 
-# Setup dir
-ADD . /home/
-WORKDIR /home
-
+# Copy files for setting
+ADD . /opt/
 
 # Create Base Enter Cont Command
-RUN chmod 755 ./docker/bash/init-bashrc.sh && echo "./docker/bash/init-bashrc.sh" >> /root/.bashrc
+RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bashrc.sh" >> /root/.bashrc
 
 
 # Setting lnmp(php,lnmp)
-RUN chmod 755 ./docker/bash/setting-lnmp.sh && bash ./docker/bash/setting-lnmp.sh
+RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-lnmp.sh
+
+# Setup default path
+WORKDIR /home/wwwroot
 
 
 # Private expose
-EXPOSE 3306
 EXPOSE 80 81 82
 
 
 # Volume for web server install
-VOLUME ["${APP_DIR}","${LOG_DIR}","${CONF_DIR}"]
+VOLUME ["/home"]
 
 
 # Start run shell

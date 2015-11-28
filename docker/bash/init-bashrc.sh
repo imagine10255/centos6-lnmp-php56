@@ -4,20 +4,28 @@ WEBSITE80_PATH="/home/wwwroot/website80/"
      LOGS_PATH="/home/wwwlogs/"
      CONF_PATH="/home/wwwconfig/"
 
+
+# Create base dir
 mkdir -p $WEBSITE80_PATH
 mkdir -p $LOGS_PATH
 mkdir -p $CONF_PATH
 
+
+# Copy default website80 files
 if [ "`ls -A $WEBSITE80_PATH`" = "" ]; then
-  \cp -fr /home/docker/wwwroot/website80/* $WEBSITE80_PATH
+  \cp -fr /opt/docker/wwwroot/website80/* $WEBSITE80_PATH
 fi
 
+
+# Copy default log files
 if [ "`ls -A $LOGS_PATH`" = "" ]; then
-  \cp -fr  /home/docker/wwwlogs/* $LOGS_PATH
+  \cp -fr  /opt/docker/wwwlogs/* $LOGS_PATH
 fi
 
+
+# Copy default config files
 if [ "`ls -A $CONF_PATH`" = "" ]; then
-  \cp -fr /home/docker/wwwconfig/* $CONF_PATH
+  \cp -fr /opt/docker/wwwconfig/* $CONF_PATH
 fi
 
 
@@ -27,7 +35,8 @@ fi
 \cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
 \cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
 
-# 檢查服務未啟動時執行
+
+# Check Service to start
 for SERVICE in nginx php-fpm
 do
   if ps ax | grep -v grep | grep $SERVICE > /dev/null
@@ -39,5 +48,6 @@ do
   fi
 done
 
-# 清空初始執行設定資料
-cat /dev/null > /home/docker/bash/init-bashrc.sh
+
+# Clear init command
+# cat /dev/null > /opt/docker/bash/init-bashrc.sh
