@@ -10,17 +10,17 @@ WEBSITE80_PATH="/home/wwwroot/website80/"
 
 if [ "`ls -A $WEBSITE80_PATH`" = "" ]; then
   echo "$WEBSITE80_PATH not default files, run copy default website80 files to here"
-  mv -r /home/docker/wwwroot/website80/* $WEBSITE80_PATH
+  mv /home/docker/wwwroot/website80/* $WEBSITE80_PATH
 fi
 
 if [ "`ls -A $LOGS_PATH`" = "" ]; then
   echo "$LOGS_PATH not default files, run copy default logs files to here"
-  mv -r /home/docker/wwwlogs/* $LOGS_PATH
+  mv /home/docker/wwwlogs/* $LOGS_PATH
 fi
 
 if [ "`ls -A $CONF_PATH`" = "" ]; then
   echo "$CONF_PATH not default files, run copy default logs files to here"
-  mv -r /home/docker/wwwconfig/* $CONF_PATH
+  mv /home/docker/wwwconfig/* $CONF_PATH
 fi
 
 
