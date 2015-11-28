@@ -4,26 +4,20 @@ WEBSITE80_PATH="/home/wwwroot/website80/"
      LOGS_PATH="/home/wwwlogs/"
      CONF_PATH="/home/wwwconfig/"
 
-# Create default file ( Config && Website80 )
-# mkdir -p /opt/backup && \
-# cp -r ${DB_DIR} /opt/backup/mysql-data
-
 if [ "`ls -A $WEBSITE80_PATH`" = "" ]; then
   echo "$WEBSITE80_PATH not default files, run copy default website80 files to here"
   mkdir -p $WEBSITE80_PATH
-  mv /home/docker/wwwroot/website80/* $WEBSITE80_PATH
+  \cp -fr /home/docker/wwwroot/website80/* $WEBSITE80_PATH
 fi
 
 if [ "`ls -A $LOGS_PATH`" = "" ]; then
   echo "$LOGS_PATH not default files, run copy default logs files to here"
-  mkdir -p $LOGS_PATH
-  mv /home/docker/wwwlogs/* $LOGS_PATH
+  \cp -fr  /home/docker/wwwlogs/* $LOGS_PATH
 fi
 
 if [ "`ls -A $CONF_PATH`" = "" ]; then
   echo "$CONF_PATH not default files, run copy default logs files to here"
-  mkdir -p $CONF_PATH
-  mv /home/docker/wwwconfig/* $CONF_PATH
+  \cp -fr /home/docker/wwwconfig/* $CONF_PATH
 fi
 
 
