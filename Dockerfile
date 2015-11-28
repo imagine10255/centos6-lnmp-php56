@@ -45,7 +45,7 @@ RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bas
 RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-lnmp.sh
 
 # Setup default path
-WORKDIR /home/wwwroot
+WORKDIR /home
 
 
 # Private expose
