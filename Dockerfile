@@ -40,11 +40,11 @@ WORKDIR /home
 
 
 # Create Base Enter Cont Command
-RUN chmod 755 ./docker_bash/init.sh && echo "./docker_bash/init.sh" >> /root/.bashrc
+RUN chmod 755 ./docker/bash/init-bashrc.sh && echo "./docker/bash/init-bashrc.sh" >> /root/.bashrc
 
 
 # Setting lnmp(php,lnmp)
-RUN bash ./docker_bash/setting_lnmp.sh
+RUN chmod 755 ./docker/bash/setting-lnmp.sh && bash ./docker/bash/setting-lnmp.sh
 
 
 # Private expose
