@@ -7,8 +7,12 @@ ENV APP_DIR=/home/wwwroot \
     CONF_DIR=/home/wwwconfig
 
 
+# Install base tool
+RUN yum -y install vim wget
+
+
 # Install develop tool
-RUN yum -y vim groupinstall development
+RUN yum -y groupinstall development
 
 
 # Install rpm
