@@ -31,9 +31,7 @@ RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/)
-RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack && \
-    php56w-common && \
-    php56w-opcache php-pecl-memcached
+RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack php56w-common php56w-opcache php-pecl-memcached
 
 
 # Install nginx
