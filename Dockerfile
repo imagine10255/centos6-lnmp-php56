@@ -8,7 +8,7 @@ ENV APP_DIR=/home/wwwroot \
 
 
 # Install develop tool
-RUN yum -y groupinstall development
+RUN yum -y vim groupinstall development
 
 
 # Install rpm
@@ -26,8 +26,10 @@ RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
     sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/nginx.repo
 
 
-# Install php-fpm
-RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-memcached php-pecl-msgpack
+# Install php-fpm (https://webtatic.com/packages/php56/)
+RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack && \
+    php56w-common && \
+    php56w-opcache php-pecl-memcached
 
 
 # Install nginx
@@ -37,12 +39,18 @@ RUN yum -y --enablerepo=nginx install nginx
 # Copy files for setting
 ADD . /opt/
 
+
 # Create Base Enter Cont Command
 RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bashrc.sh" >> /root/.bashrc
 
 
 # Setting lnmp(php,lnmp)
 RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-lnmp.sh
+
+
+# Setting Composer
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+
 
 # Setup default path
 WORKDIR /home
