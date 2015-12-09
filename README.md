@@ -8,6 +8,7 @@ PHP5.6 + Nginx1.8
 
 目前映像檔約 965.6 MB
 
+[DockerHub lnmp-mini Link](https://hub.docker.com/r/imagine10255/lnmp-mini/)
 
 
 ## how to use
