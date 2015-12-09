@@ -38,24 +38,29 @@ RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xm
 RUN yum -y --enablerepo=nginx install nginx
 
 
+# Setting composer
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+
+
+# Install laravel-envoy
+RUN composer global require "laravel/envoy=~1.0"
+
+
 # Copy files for setting
 ADD . /opt/
 
 
 # Create Base Enter Cont Command
-RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bashrc.sh" >> /root/.bashrc
+RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bashrc.sh" >> /root/.bashrc && \
+    echo 'export PATH="/root/.composer/vendor/bin:$PATH"' >> /root/.bashrc
 
 
 # Setting lnmp(php,lnmp)
 RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-lnmp.sh
 
 
-# Setting Composer
-RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
-
-
 # Setup default path
-WORKDIR /home
+WORKDIR /home/wwwroot
 
 
 # Private expose

@@ -48,6 +48,3 @@ do
   fi
 done
 
-
-# Clear init command
-# cat /dev/null > /opt/docker/bash/init-bashrc.sh

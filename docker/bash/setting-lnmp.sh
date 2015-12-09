@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create WORKDIR
+mkdir /home/wwwroot
+
 # Setting php
 cp -p /etc/php.ini /etc/php.ini.backup
 sed -i -e 's/;date.timezone =/date.timezone = "Asia\/Taipei"/' /etc/php.ini | grep date.timezone
