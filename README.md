@@ -1,4 +1,4 @@
-# dockerfile-lnmp-min
+# dockerfile-lnmp-mini
 
 PHP5.6 + Nginx1.8
 
@@ -28,3 +28,10 @@ PHP5.6 + Nginx1.8
 - push-images.sh 使用DockerHub上傳映像檔
 
 > $ sh push-images.sh
+
+
+## Composer Package
+
+- Envoy 1.0.25 任務執行
+
+> $ envoy
