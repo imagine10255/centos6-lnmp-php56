@@ -30,6 +30,17 @@ PHP5.6 + Nginx1.8
 > $ sh push-images.sh
 
 
+## Link Mariadb-Docker
+
+https://hub.docker.com/r/library/mariadb/
+
+Setting Password in Environment Variables [MYSQL_ROOT_PASSWORD={your password}]
+
+or
+
+> $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
+
+
 ## Composer Package
 
 - Envoy 1.0.25 任務執行
