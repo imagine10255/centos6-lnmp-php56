@@ -4,7 +4,8 @@ MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 
 ENV APP_DIR=/home/wwwroot \
     LOG_DIR=/home/wwwlogs \
-    CONF_DIR=/home/wwwconfig
+    CONF_DIR=/home/wwwconfig \
+    SSH_PASSWORD=P@ssw0rd
 
 
 # Install base tool
@@ -28,6 +29,12 @@ RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
     yum -y update nginx-release-centos && \
     cp -p /etc/yum.repos.d/nginx.repo /etc/yum.repos.d/nginx.repo.backup && \
     sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/nginx.repo
+
+
+# Install SSH Service
+RUN yum install -y openssh-server passwd
+RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
+    echo "${SSH_PASSWORD}" | passwd "root" --stdin
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/)
@@ -64,7 +71,7 @@ WORKDIR /home/wwwroot
 
 
 # Private expose
-EXPOSE 80 81 82
+EXPOSE 22 80 81 82
 
 
 # Volume for web server install

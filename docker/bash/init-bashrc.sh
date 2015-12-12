@@ -37,7 +37,7 @@ fi
 
 
 # Check Service to start
-for SERVICE in nginx php-fpm
+for SERVICE in nginx php-fpm sshd
 do
   if ps ax | grep -v grep | grep $SERVICE > /dev/null
   then
