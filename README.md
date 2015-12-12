@@ -30,6 +30,10 @@ PHP5.6 + Nginx1.8
 
 > $ sh push-images.sh
 
+- delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被刪除)
+
+> $ sh delete-images.sh
+
 
 ## Link Mariadb-Docker
 
