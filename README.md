@@ -1,4 +1,4 @@
-# dockerfile-lnmp-mini
+# docker-lnmp-mini & use tools
 
 PHP5.6 + Nginx1.8
 
