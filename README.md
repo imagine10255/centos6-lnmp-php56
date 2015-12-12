@@ -6,7 +6,7 @@ PHP5.6 + Nginx1.8
 
 可修改 nginx 與 3個網站的設定資料(例如:重新指定網站跟目錄)
 
-目前映像檔約 965.6 MB
+目前映像檔約 980.9 MB
 
 [DockerHub lnmp-mini Link](https://hub.docker.com/r/imagine10255/lnmp-mini/)
 
