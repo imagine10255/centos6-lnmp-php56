@@ -1,4 +1,4 @@
-FROM centos:6
+FROM centos:centos6
 MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 
 
