@@ -35,6 +35,13 @@ PHP5.6 + Nginx1.8
 > $ sh delete-images.sh
 
 
+## Working Directory
+
+- home/wwwconfig/ 設定相關檔案(若有變動請重啟容器)
+- home/wwwlog/    事件紀錄相關檔案
+- home/wwwroot/   網站相關檔案
+
+
 ## Link Mariadb-Docker
 
 https://hub.docker.com/r/library/mariadb/
