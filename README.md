@@ -2,7 +2,7 @@
 
 PHP5.6 + Nginx1.8
 
-預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能
+預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
 
 可修改 nginx 與 3個網站的設定資料(例如:重新指定網站跟目錄)
 
