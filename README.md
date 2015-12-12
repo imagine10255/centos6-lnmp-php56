@@ -10,6 +10,7 @@ PHP5.6 + Nginx1.8
 
 [DockerHub lnmp-mini Link](https://hub.docker.com/r/imagine10255/lnmp-mini/)
 
+2015.12.12 新增SSH連線(密碼預設 P@ssw0rd)
 
 ## how to use
 
