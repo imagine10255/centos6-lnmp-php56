@@ -34,10 +34,11 @@ fi
 \cp -fr /home/wwwconfig/nginx/nginx.conf /etc/nginx/nginx.conf
 \cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
 \cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
+\cp -fr /home/wwwconfig/crontab /etc/crontab
 
 
 # Check Service to start
-for SERVICE in nginx php-fpm sshd
+for SERVICE in nginx php-fpm sshd crontab
 do
   if ps ax | grep -v grep | grep $SERVICE > /dev/null
   then

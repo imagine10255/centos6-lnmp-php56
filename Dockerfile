@@ -2,10 +2,7 @@ FROM centos:centos6
 MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 
 
-ENV APP_DIR=/home/wwwroot \
-    LOG_DIR=/home/wwwlogs \
-    CONF_DIR=/home/wwwconfig \
-    SSH_PASSWORD=P@ssw0rd
+ENV SSH_PASSWORD=P@ssw0rd
 
 
 # Install base tool
@@ -35,6 +32,11 @@ RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
 RUN yum install -y openssh-server passwd
 RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
     echo "${SSH_PASSWORD}" | passwd "root" --stdin
+
+
+# Install Crontab Service
+RUN yum -y install  vixie-cron crontabs
+RUN crontab /etc/crontab
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/)
