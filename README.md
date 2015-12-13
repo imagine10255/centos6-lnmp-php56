@@ -13,7 +13,7 @@ PHP5.6 + Nginx1.8
 
 2015.12.12 新增SSH連線(密碼預設 P@ssw0rd)
 
-2015.12.13 新增Crontab, 增加排程若需要備份請修改 /home/wwwconfig/crontab, 修改完成進行重新啟動
+2015.12.13 新增Crontab
 
 
 ## How to setting
@@ -36,6 +36,11 @@ PHP5.6 + Nginx1.8
 
 > 修改完成後重新啟動容器
 
+- 修改Crontab設定
+
+> $ vi home/wwwconfig/Crontab
+
+> 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
 
 
 ## Working Directory
