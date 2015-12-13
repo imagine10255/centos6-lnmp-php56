@@ -5,6 +5,10 @@ MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 ENV SSH_PASSWORD=P@ssw0rd
 
 
+# Setting DateTime Zone
+RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+
 # Install base tool
 RUN yum -y install vim wget
 
