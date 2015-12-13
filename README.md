@@ -4,13 +4,15 @@ PHP5.6 + Nginx1.8
 
 預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
 
-可修改 nginx 與 3個網站的設定資料(例如:重新指定網站跟目錄)
+可修改 nginx 與 3個網站的設定資料(例如:重新指定網站跟目錄,home/wwwconfig/virtualhost/website8x.conf)
 
 目前映像檔約 980.9 MB
 
 [DockerHub lnmp-mini Link](https://hub.docker.com/r/imagine10255/lnmp-mini/)
 
 2015.12.12 新增SSH連線(密碼預設 P@ssw0rd)
+
+2015.12.13 新增Crontab, 增加排程若需要備份請修改 /home/wwwconfig/crontab, 修改完成進行重新啟動
 
 ## how to use
 
