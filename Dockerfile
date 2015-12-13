@@ -36,7 +36,6 @@ RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
 
 # Install Crontab Service
 RUN yum -y install  vixie-cron crontabs
-RUN crontab /etc/crontab
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/)
