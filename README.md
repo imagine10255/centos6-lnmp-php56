@@ -15,6 +15,8 @@ PHP5.6 + Nginx1.8
 
 2015.12.13 新增Crontab
 
+2015.12.13 新增TimeZone Asia/Taipei CST時區
+
 
 ## How to setting
 
