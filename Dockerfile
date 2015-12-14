@@ -5,12 +5,8 @@ MAINTAINER Imagine Chiu<imagine10255@gmail.com>
 ENV SSH_PASSWORD=P@ssw0rd
 
 
-# Setting DateTime Zone
-RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-
-
 # Install base tool
-RUN yum -y install vim wget
+RUN yum -y install vim wget tar
 
 
 # Install develop tool
@@ -69,6 +65,10 @@ RUN chmod 755 /opt/docker/bash/init-bashrc.sh && echo "/opt/docker/bash/init-bas
 
 # Setting lnmp(php,lnmp)
 RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-lnmp.sh
+
+
+# Setting DateTime Zone
+RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
 
 # Setup default path
