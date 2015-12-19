@@ -29,11 +29,18 @@ if [ "`ls -A $CONF_PATH`" = "" ]; then
 fi
 
 
-# Cover profile
+# Cover profile nginx
 \cp -fr /home/wwwconfig/php.ini /etc/php.ini
 \cp -fr /home/wwwconfig/nginx/nginx.conf /etc/nginx/nginx.conf
 \cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
 \cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
+
+
+# Cover profile supervisor
+\cp -fr /home/wwwconfig/supervisord.conf /etc/supervisord.conf
+
+
+# Cover profile crontab
 crontab /home/wwwconfig/crontab
 
 

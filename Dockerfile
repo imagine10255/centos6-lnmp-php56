@@ -34,7 +34,7 @@ RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
     echo "${SSH_PASSWORD}" | passwd "root" --stdin
 
 
-# Install Crontab Service
+# Install crontab service
 RUN yum -y install  vixie-cron crontabs
 
 
@@ -52,6 +52,13 @@ RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/lo
 
 # Install laravel-envoy
 RUN composer global require "laravel/envoy=~1.0"
+
+
+# Install supervisor
+RUN yum -y install python-setuptools && \
+    easy_install supervisor && \
+    echo_supervisord_conf > /etc/supervisord.conf && \
+    supervisord -c /etc/supervisord.conf
 
 
 # Copy files for setting
