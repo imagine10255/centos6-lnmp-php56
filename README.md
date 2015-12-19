@@ -19,6 +19,8 @@ PHP5.6 + Nginx1.8
 
 2015.12.19 新增 Supervisor 進程管理
 
+2015.12.19 升級 git-1.7.1->2.6.3
+
 
 ## How to setting
 
