@@ -57,4 +57,12 @@ do
 done
 
 
+# Check Supervisor to start
+if ps ax | grep -v grep | grep /etc/supervisord.conf > /dev/null
+then
+     RESULT="TRUE"
+else
+     #echo "starting...";
+     supervisord -c /etc/supervisord.conf;
+fi
 

@@ -35,7 +35,7 @@ RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
 
 
 # Install crontab service
-RUN yum -y install  vixie-cron crontabs
+RUN yum -y install vixie-cron crontabs
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/)
@@ -57,8 +57,7 @@ RUN composer global require "laravel/envoy=~1.0"
 # Install supervisor
 RUN yum -y install python-setuptools && \
     easy_install supervisor && \
-    echo_supervisord_conf > /etc/supervisord.conf && \
-    supervisord -c /etc/supervisord.conf
+    echo_supervisord_conf > /etc/supervisord.conf
 
 
 # Copy files for setting
