@@ -59,7 +59,7 @@ PHP5.6 + Nginx1.8
 
 > 建立 home/wwwconfig/supervisord/*conf 檔案
 
-> 可參考 home/wwwconfig/supervisord.conf 最底下的 sample
+> 可參考 home/wwwconfig/supervisord.conf 最底下的 sample (請注意需自行建立空的log files)
 
 > $ supervisorctl start laravel-worker:*
 
