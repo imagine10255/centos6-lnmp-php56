@@ -38,6 +38,10 @@ RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
 RUN yum -y install vixie-cron crontabs
 
 
+# Install Git need package
+RUN yum -y install curl-devel expat-devel gettext-devel devel zlib-devel perl-devel
+
+
 # Install php-fpm (https://webtatic.com/packages/php56/)
 RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack php-gd.x86_64 php56w-common php56w-opcache php-pecl-memcached
 
@@ -58,6 +62,14 @@ RUN composer global require "laravel/envoy=~1.0"
 RUN yum -y install python-setuptools && \
     easy_install supervisor && \
     echo_supervisord_conf > /etc/supervisord.conf
+
+
+# Install Git Laster Version
+RUN wget https://www.kernel.org/pub/software/scm/git/git-2.6.3.tar.gz && \
+    tar zxf ./git-2.6.3.tar.gz && \
+    cd ./git-2.6.3 && \
+    ./configure && make && make install && \
+    rm -rf ./git-2.6.3*
 
 
 # Copy files for setting
