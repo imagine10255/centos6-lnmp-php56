@@ -11,18 +11,22 @@ PHP5.6 + Nginx1.8
 - 目前映像檔約 986.4 MB
 
 
-2015.12.12 新增SSH連線(密碼預設 P@ssw0rd)
+2015.12.12 新增 SSH連線(密碼預設 P@ssw0rd)
 
-2015.12.13 新增Crontab
+2015.12.13 新增 Crontab 排程管理
 
-2015.12.13 新增TimeZone Asia/Taipei CST時區
+2015.12.13 新增 TimeZone Asia/Taipei CST時區
+
+2015.12.19 新增 Supervisor 進程管理
 
 
 ## How to setting
 
 - 修改網站根目錄
 
-> $ vi home/wwwconfig/virtualhost/website8x.conf
+> $ vi home/wwwconfig/virtualhost/website80.conf
+> $ vi home/wwwconfig/virtualhost/website81.conf
+> $ vi home/wwwconfig/virtualhost/website82.conf
 
 > 修改完成後重新啟動容器 
 
@@ -43,6 +47,21 @@ PHP5.6 + Nginx1.8
 > $ vi home/wwwconfig/Crontab
 
 > 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
+
+- 修改Supervisor設定
+
+> $ vi home/wwwconfig/supervisord.conf
+
+> 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
+
+
+- 新增進程管理
+
+> 建立 home/wwwconfig/supervisord/*conf 檔案
+
+> 可參考 home/wwwconfig/supervisord.conf 最底下的 sample
+
+> $ supervisorctl start laravel-worker:*
 
 
 ## Working Directory
