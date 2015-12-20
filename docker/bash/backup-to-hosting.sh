@@ -12,7 +12,13 @@
 
 
 # Backup SSH
-\cp -fr /root/.ssh/* /home/wwwconfig/ssh-key/
+if [ -f "/root/.ssh/id_rsa.pub" ]; then
+  \cp -fr /root/.ssh/id_rsa.pub /home/wwwconfig/ssh-key/
+fi
+
+if [ -f "/root/.ssh/id_rsa" ]; then
+  \cp -fr /root/.ssh/id_rsa /home/wwwconfig/ssh-key/
+fi
 
 
 echo "Backup Finish"
