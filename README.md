@@ -21,6 +21,8 @@ PHP5.6 + Nginx1.8
 
 2015.12.19 升級 git-1.7.1->2.6.3
 
+2015.12.20 新增 SSH Key 保留, Backup Config
+
 
 ## How to setting
 
@@ -64,6 +66,16 @@ PHP5.6 + Nginx1.8
 > 可參考 home/wwwconfig/supervisord.conf 最底下的 sample (請注意需自行建立空的log files)
 
 > $ supervisorctl start laravel-worker:*
+
+
+- 備份 SSH KEY, Nginx,PHP.ini,Hosting Config
+
+> sh ~/backup-to-hosting.sh
+
+
+- 重新啟動 Nginx
+
+> sh ~/nginx-reload.sh
 
 
 ## Working Directory
