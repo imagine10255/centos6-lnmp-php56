@@ -8,7 +8,7 @@ PHP5.6 + Nginx1.8
 
 - 可搭配 [Kitematic](https://www.docker.com/docker-toolbox) 使用 ([DockerHub Link](https://hub.docker.com/r/imagine10255/centos6-lnmp-php56/))
 
-- 目前映像檔約 986.4 MB
+- 目前映像檔約 1.144 GB
 
 
 2015.12.12 新增 SSH連線(密碼預設 P@ssw0rd)
