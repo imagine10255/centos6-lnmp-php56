@@ -39,8 +39,14 @@ fi
 
 
 # Cover profile ssh key
-\cp -fr /home/wwwconfig/ssh-key/* $SSH_PATH
-chmod 400 /root/.ssh/id_rsa
+if [ -f "/home/wwwconfig/ssh-key/id_rsa.pub" ]; then
+  \cp -fr /home/wwwconfig/ssh-key/id_rsa.pub /root/.ssh/
+fi
+
+if [ -f "/home/wwwconfig/ssh-key/id_rsa" ]; then
+  \cp -fr /home/wwwconfig/ssh-key/id_rsa /root/.ssh/
+  chmod 400 /root/.ssh/id_rsa
+fi
 
 
 # Cover profile supervisor
