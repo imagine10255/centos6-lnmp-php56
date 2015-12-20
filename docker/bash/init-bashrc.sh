@@ -3,7 +3,7 @@
 WEBSITE80_PATH="/home/wwwroot/website80/"
      LOGS_PATH="/home/wwwlogs/"
      CONF_PATH="/home/wwwconfig/"
-     SSH_PATH="~/.ssh/"
+     SSH_PATH="/root/.ssh/"
 
 
 # Create base dir
@@ -40,7 +40,7 @@ fi
 
 # Cover profile ssh key
 \cp -fr /home/wwwconfig/ssh-key/* $SSH_PATH
-chmod 400 ~/.ssh/id_rsa
+chmod 400 /root/.ssh/id_rsa
 
 
 # Cover profile supervisor

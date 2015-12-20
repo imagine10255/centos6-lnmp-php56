@@ -12,7 +12,7 @@
 
 
 # Backup SSH
-\cp -fr ~/.ssh/* /home/wwwconfig/ssh-key/
+\cp -fr /root/.ssh/* /home/wwwconfig/ssh-key/
 
 
 echo "Backup Finish"

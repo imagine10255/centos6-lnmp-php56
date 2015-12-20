@@ -91,8 +91,8 @@ RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
 
 # SH Tools
-RUN ln -s /opt/docker/bash/backup-to-hosting.sh ~/ && \
-    ln -s /opt/docker/bash/nginx-reload.sh ~/
+RUN ln -s /opt/docker/bash/backup-to-hosting.sh /root/ && \
+    ln -s /opt/docker/bash/nginx-reload.sh /root/
 
 
 # Setup default path
