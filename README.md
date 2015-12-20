@@ -73,7 +73,7 @@ PHP5.6 + Nginx1.8
 > sh ~/backup-to-hosting.sh
 
 
-- 重新啟動 Nginx
+- 重新讀取並重新啟動 Nginx (該指令會將 home/config 設定檔覆蓋到目前的設定檔)
 
 > sh ~/nginx-reload.sh
 
