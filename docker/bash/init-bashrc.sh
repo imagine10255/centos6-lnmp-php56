@@ -3,12 +3,14 @@
 WEBSITE80_PATH="/home/wwwroot/website80/"
      LOGS_PATH="/home/wwwlogs/"
      CONF_PATH="/home/wwwconfig/"
+     SSH_PATH="~/.ssh/"
 
 
 # Create base dir
 mkdir -p $WEBSITE80_PATH
 mkdir -p $LOGS_PATH
 mkdir -p $CONF_PATH
+mkdir -p $SSH_PATH
 
 
 # Copy default website80 files
@@ -34,6 +36,11 @@ fi
 \cp -fr /home/wwwconfig/nginx/nginx.conf /etc/nginx/nginx.conf
 \cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
 \cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
+
+
+# Cover profile ssh key
+\cp -fr /home/wwwconfig/ssh-key/* $SSH_PATH
+chmod 400 ~/.ssh/id_rsa
 
 
 # Cover profile supervisor

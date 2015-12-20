@@ -65,11 +65,12 @@ RUN yum -y install python-setuptools && \
 
 
 # Install Git Laster Version
-RUN wget https://www.kernel.org/pub/software/scm/git/git-2.6.3.tar.gz && \
+RUN cd ~/ && \
+    wget https://www.kernel.org/pub/software/scm/git/git-2.6.3.tar.gz && \
     tar zxf ./git-2.6.3.tar.gz && \
     cd ./git-2.6.3 && \
     ./configure && make && make install && \
-    rm -rf ./git-2.6.3*
+    rm -rf ~/git-2.6.3*
 
 
 # Copy files for setting
@@ -87,6 +88,11 @@ RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-
 
 # Setting DateTime Zone
 RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
+
+# SH Tools
+RUN ln -s /opt/docker/bash/backup-to-hosting.sh ~/ && \
+    ln -s /opt/docker/bash/nginx-reload.sh ~/
 
 
 # Setup default path
