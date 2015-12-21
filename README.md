@@ -95,9 +95,9 @@ or
 
 > $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
 
-$ select now();
+$ mysql> select now();
 
-$ set time_zone = '+8:00';
+$ mysql> set time_zone = '+8:00';
 
 $ echo "default-time_zoen = '+8:00'" >> /etc/mysql/my.cnf
 
