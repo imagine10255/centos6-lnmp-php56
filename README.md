@@ -99,6 +99,8 @@ $ select now();
 
 $ set time_zone = '+8:00';
 
+$ echo "default-time_zoen = '+8:00'" >> /etc/mysql/my.cnf
+
 ## Composer Package
 
 - Envoy 1.0.25 任務執行
