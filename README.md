@@ -95,6 +95,8 @@ or
 
 > $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
 
+$ select now();
+$ set time_zone = '+8:00';
 
 ## Composer Package
 
