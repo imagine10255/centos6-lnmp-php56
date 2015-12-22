@@ -100,7 +100,7 @@ WORKDIR /home
 
 
 # Private expose
-EXPOSE 22 80 81 82
+EXPOSE 22 80 81 82 8080
 
 
 # Volume for web server install
