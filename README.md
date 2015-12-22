@@ -95,11 +95,9 @@ or
 
 > $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
 
-$ mysql> select now();
+`use exec enter command change zone time in taiwan`
 
-$ mysql> set time_zone = '+8:00';
-
-$ echo "default-time_zoen = '+8:00'" >> /etc/mysql/my.cnf
+$ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
 ## Composer Package
 
