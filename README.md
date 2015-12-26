@@ -28,11 +28,13 @@ PHP5.6 + Nginx1.8
 
 - 修改網站根目錄
 
+
     $ vi home/config/virtualhost/sample.conf
 
 > 修改完成後重新啟動容器 
 
 - 修改NGINX設定
+
 
     $ vi home/config/nginx/nginx.conf
 
@@ -40,11 +42,13 @@ PHP5.6 + Nginx1.8
 
 - 修改PHP.INI設定
 
+
     $ vi home/config/php.ini
 
 > 修改完成後重新啟動容器
 
 - 修改Crontab設定
+
 
     $ vi home/config/Crontab
 
@@ -52,7 +56,8 @@ PHP5.6 + Nginx1.8
 
 - 修改Supervisor設定
 
- $ vi home/config/supervisord.conf
+
+    $ vi home/config/supervisord.conf
 
 > 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
 
@@ -63,23 +68,28 @@ PHP5.6 + Nginx1.8
 
 > 可參考 home/wwwconfig/supervisord.conf 最底下的 sample (請注意需自行建立空的log files)
 
+
     $ supervisorctl start laravel-worker:*
 
 
 - 備份 SSH KEY, Nginx,PHP.ini,Hosting Config
 
-    sh ~/backup-to-hosting.sh
+
+    $ sh ~/backup-to-hosting.sh
 
 
 - 重新讀取並重新啟動 Nginx (該指令會將 home/config 設定檔覆蓋到目前的設定檔)
 
-    sh ~/nginx-reload.sh
+
+    $ sh ~/nginx-reload.sh
 
 
 ## Working Directory
 
 - home/config/ 設定相關檔案(若有變動請重啟容器)
+
 - home/log/    事件紀錄相關檔案
+
 - home/root/   網站相關檔案
 
 
@@ -93,13 +103,18 @@ or
 
     $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
 
-`use exec enter command change zone time in taiwan`
+
+`useexec enter command change zone time in taiwan`
+
+
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+
 
 ## Composer Package
 
 - Envoy 1.0.25 任務執行
+
 
     $ envoy
 
@@ -108,20 +123,25 @@ or
 
 - enter-container.sh 進入容器
 
+
     $ sh enter-container.sh {CONTAINERID NAME}
 
 - create-container.sh 建立容器
+
 
     $ sh create-container.sh
 
 - build-container.sh 重新使用DockerFile 製作映像檔
 
+
     $ sh build-container.sh
 
 - push-images.sh 使用DockerHub上傳映像檔
 
+
     $ sh push-images.sh
 
 - delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被刪除)
+
 
     $ sh delete-images.sh
