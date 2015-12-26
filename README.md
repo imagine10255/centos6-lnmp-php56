@@ -26,35 +26,35 @@ PHP5.6 + Nginx1.8
 
 ## How to setting
 
-- 修改網站根目錄
+修改網站根目錄
 
 
     $ vi home/config/virtualhost/sample.conf
 
 > 修改完成後重新啟動容器 
 
-- 修改NGINX設定
+修改NGINX設定
 
 
     $ vi home/config/nginx/nginx.conf
 
 > 修改完成後重新啟動容器
 
-- 修改PHP.INI設定
+修改PHP.INI設定
 
 
     $ vi home/config/php.ini
 
 > 修改完成後重新啟動容器
 
-- 修改Crontab設定
+修改Crontab設定
 
 
     $ vi home/config/Crontab
 
 > 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
 
-- 修改Supervisor設定
+修改Supervisor設定
 
 
     $ vi home/config/supervisord.conf
@@ -72,13 +72,13 @@ PHP5.6 + Nginx1.8
     $ supervisorctl start laravel-worker:*
 
 
-- 備份 SSH KEY, Nginx,PHP.ini,Hosting Config
+備份 SSH KEY, Nginx,PHP.ini,Hosting Config
 
 
     $ sh ~/backup-to-hosting.sh
 
 
-- 重新讀取並重新啟動 Nginx (該指令會將 home/config 設定檔覆蓋到目前的設定檔)
+重新讀取並重新啟動 Nginx (該指令會將 home/config 設定檔覆蓋到目前的設定檔)
 
 
     $ sh ~/nginx-reload.sh
@@ -113,7 +113,7 @@ or
 
 ## Composer Package
 
-- Envoy 1.0.25 任務執行
+Envoy 1.0.25 任務執行
 
 
     $ envoy
@@ -121,27 +121,27 @@ or
 
 ## How to use tool
 
-- enter-container.sh 進入容器
+enter-container.sh 進入容器
 
 
     $ sh enter-container.sh {CONTAINERID NAME}
 
-- create-container.sh 建立容器
+create-container.sh 建立容器
 
 
     $ sh create-container.sh
 
-- build-container.sh 重新使用DockerFile 製作映像檔
+build-container.sh 重新使用DockerFile 製作映像檔
 
 
     $ sh build-container.sh
 
-- push-images.sh 使用DockerHub上傳映像檔
+push-images.sh 使用DockerHub上傳映像檔
 
 
     $ sh push-images.sh
 
-- delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被刪除)
+delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被刪除)
 
 
     $ sh delete-images.sh
