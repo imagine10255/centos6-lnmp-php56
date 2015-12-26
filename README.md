@@ -1,6 +1,6 @@
 # centos6-lnmp-php56 & use tools
 
-PHP5.6 + Nginx1.8
+![Nginx1.8](https://img.shields.io/badge/nginx-1.8-brightgreen.svg) ![PHP5.6](https://img.shields.io/badge/php-5.6-brightgreen.svg)
 
 預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
 
@@ -104,9 +104,7 @@ or
     $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
 
 
-`useexec enter command change zone time in taiwan`
-
-
+usee xec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
