@@ -11,63 +11,42 @@
 
 ### How To Setting
 
-修改網站根目錄
-
+修改網站根目錄(修改完成後重新啟動容器)
 
     $ vi home/config/virtualhost/sample.conf
 
-> 修改完成後重新啟動容器 
 
-修改NGINX設定
-
+修改NGINX設定(修改完成後重新啟動容器)
 
     $ vi home/config/nginx/nginx.conf
 
-> 修改完成後重新啟動容器
-
-修改PHP.INI設定
-
+修改PHP.INI設定(修改完成後重新啟動容器)
 
     $ vi home/config/php.ini
 
-> 修改完成後重新啟動容器
-
-修改Crontab設定
-
+修改Crontab設定(修改完成後重新啟動容器，需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
 
     $ vi home/config/Crontab
 
-> 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
-
-修改Supervisor設定
-
+修改Supervisor設定(修改完成後重新啟動容器，需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
 
     $ vi home/config/supervisord.conf
 
-> 修改完成後重新啟動容器 (需注意格式不可以錯誤,若有錯誤可在啟動訊息上檢視到)
-
-
 - 新增進程管理
 
-> 建立 home/wwwconfig/supervisord/*conf 檔案
+建立 home/wwwconfig/supervisord/*conf 檔案
 
-> 可參考 home/wwwconfig/supervisord.conf 最底下的 sample (請注意需自行建立空的log files)
-
+可參考 home/wwwconfig/supervisord.conf 最底下的 sample (請注意需自行建立空的log files)
 
     $ supervisorctl start laravel-worker:*
 
-
 備份 SSH KEY, Nginx,PHP.ini,Hosting Config
-
 
     $ sh ~/backup-to-hosting.sh
 
-
 重新讀取並重新啟動 Nginx (該指令會將 home/config 設定檔覆蓋到目前的設定檔)
 
-
     $ sh ~/nginx-reload.sh
-
 
 ### Working Directory
 
