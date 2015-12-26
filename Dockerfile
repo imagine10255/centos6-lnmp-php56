@@ -99,7 +99,7 @@ EXPOSE 22 80 81 82 8080
 
 
 # Volume for web server install
-VOLUME ["/home/wwwroot","/home/wwwconfig","/home/wwwlogs"]
+VOLUME ["/home/website","/home/config","/home/logs"]
 
 
 # Start run shell

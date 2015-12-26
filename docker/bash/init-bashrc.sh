@@ -1,8 +1,8 @@
 #!/bin/bash
 
-WEBSITE80_PATH="/home/wwwroot/website80/"
-     LOGS_PATH="/home/wwwlogs/"
-     CONF_PATH="/home/wwwconfig/"
+WEBSITE80_PATH="/home/website/default/"
+     LOGS_PATH="/home/logs/"
+     CONF_PATH="/home/config/"
      SSH_PATH="/root/.ssh/"
 
 
@@ -15,46 +15,46 @@ mkdir -p $SSH_PATH
 
 # Copy default website80 files
 if [ "`ls -A $WEBSITE80_PATH`" = "" ]; then
-  \cp -fr /opt/docker/wwwroot/website80/* $WEBSITE80_PATH
+  \cp -fr /opt/docker/website/default/* $WEBSITE80_PATH
 fi
 
 
 # Copy default log files
 if [ "`ls -A $LOGS_PATH`" = "" ]; then
-  \cp -fr  /opt/docker/wwwlogs/* $LOGS_PATH
+  \cp -fr  /opt/docker/logs/* $LOGS_PATH
 fi
 
 
 # Copy default config files
 if [ "`ls -A $CONF_PATH`" = "" ]; then
-  \cp -fr /opt/docker/wwwconfig/* $CONF_PATH
+  \cp -fr /opt/docker/config/* $CONF_PATH
 fi
 
 
 # Cover profile nginx
-\cp -fr /home/wwwconfig/php.ini /etc/php.ini
-\cp -fr /home/wwwconfig/nginx/nginx.conf /etc/nginx/nginx.conf
-\cp -fr /home/wwwconfig/nginx/plugins/*.conf /etc/nginx/plugins/
-\cp -fr /home/wwwconfig/virtualhost/*.conf /etc/nginx/sites-enabled/
+\cp -fr ${CONF_PATH}php.ini /etc/php.ini
+\cp -fr ${CONF_PATH}nginx/nginx.conf /etc/nginx/nginx.conf
+\cp -fr ${CONF_PATH}nginx/plugins/*.conf /etc/nginx/plugins/
+\cp -fr ${CONF_PATH}virtualhost/*.conf /etc/nginx/sites-enabled/
 
 
 # Cover profile ssh key
-if [ -f "/home/wwwconfig/ssh-key/id_rsa.pub" ]; then
-  \cp -fr /home/wwwconfig/ssh-key/id_rsa.pub /root/.ssh/
+if [ -f "${CONF_PATH}ssh-key/id_rsa.pub" ]; then
+  \cp -fr ${CONF_PATH}ssh-key/id_rsa.pub /root/.ssh/
 fi
 
-if [ -f "/home/wwwconfig/ssh-key/id_rsa" ]; then
-  \cp -fr /home/wwwconfig/ssh-key/id_rsa /root/.ssh/
+if [ -f "${CONF_PATH}ssh-key/id_rsa" ]; then
+  \cp -fr ${CONF_PATH}ssh-key/id_rsa /root/.ssh/
   chmod 400 /root/.ssh/id_rsa
 fi
 
 
 # Cover profile supervisor
-\cp -fr /home/wwwconfig/supervisord.conf /etc/supervisord.conf
+\cp -fr ${CONF_PATH}supervisord.conf /etc/supervisord.conf
 
 
 # Cover profile crontab
-crontab /home/wwwconfig/crontab
+crontab ${CONF_PATH}crontab
 
 
 # Check Service to start

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create WORKDIR
-mkdir /home/wwwroot
+mkdir /home/website
 
 # Setting php
 cp -p /etc/php.ini /etc/php.ini.backup
