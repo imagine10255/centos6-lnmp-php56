@@ -1,4 +1,4 @@
-# centos6-lnmp-php56 & use tools
+### centos6-lnmp-php56 & use tools
 
 ![Nginx1.8](https://img.shields.io/badge/nginx-1.8-brightgreen.svg) ![PHP5.6](https://img.shields.io/badge/php-5.6-brightgreen.svg)
 
@@ -24,7 +24,7 @@
 2015.12.20 新增 SSH Key 保留, Backup Config
 
 
-## How to setting
+### How to setting
 
 修改網站根目錄
 
@@ -84,7 +84,7 @@
     $ sh ~/nginx-reload.sh
 
 
-## Working Directory
+### Working Directory
 
 - home/config/ 設定相關檔案(若有變動請重啟容器)
 
@@ -93,7 +93,7 @@
 - home/root/   網站相關檔案
 
 
-## Link Mariadb-Docker
+### Link Mariadb-Docker
 
 https://hub.docker.com/r/library/mariadb/
 
@@ -102,14 +102,14 @@ Setting Password in Environment Variables [MYSQL_ROOT_PASSWORD={your password}]
 or
 
     $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
-
+    
 
 usee xec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
 
-## Composer Package
+### Composer Package
 
 Envoy 1.0.25 任務執行
 
@@ -117,7 +117,7 @@ Envoy 1.0.25 任務執行
     $ envoy
 
 
-## How to use tool
+### How to use tool
 
 enter-container.sh 進入容器
 
