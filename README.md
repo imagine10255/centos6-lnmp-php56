@@ -1,5 +1,3 @@
-### centos6-lnmp-php56 & use tools
-
 ![Nginx1.8](https://img.shields.io/badge/nginx-1.8-brightgreen.svg) ![PHP5.6](https://img.shields.io/badge/php-5.6-brightgreen.svg)
 
 預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
@@ -11,20 +9,7 @@
 - 目前映像檔約 1.144 GB
 
 
-2015.12.12 新增 SSH連線(密碼預設 P@ssw0rd)
-
-2015.12.13 新增 Crontab 排程管理
-
-2015.12.13 新增 TimeZone Asia/Taipei CST時區
-
-2015.12.19 新增 Supervisor 進程管理
-
-2015.12.19 升級 git-1.7.1->2.6.3
-
-2015.12.20 新增 SSH Key 保留, Backup Config
-
-
-### How to setting
+### How To Setting
 
 修改網站根目錄
 
@@ -117,7 +102,7 @@ Envoy 1.0.25 任務執行
     $ envoy
 
 
-### How to use tool
+### How To Use Tool
 
 enter-container.sh 進入容器
 
@@ -143,3 +128,19 @@ delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被�
 
 
     $ sh delete-images.sh
+
+
+
+### Catalog History
+
+2015-12-12 新增 SSH連線(密碼預設 P@ssw0rd)
+
+2015-12-13 新增 Crontab 排程管理
+
+2015-12-13 新增 TimeZone Asia/Taipei CST時區
+
+2015-12-19 新增 Supervisor 進程管理
+
+2015-12-19 升級 git-1.7.1->2.6.3
+
+2015-12-20 新增 SSH Key 保留, Backup Config
