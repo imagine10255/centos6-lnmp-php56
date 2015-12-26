@@ -13,19 +13,9 @@ RUN yum -y install vim wget tar
 RUN yum -y groupinstall development
 
 
-# Install rpm
+# Install php rpm
 RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
-    rpm -ivh http://ftp.riken.jp/Linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
-    yum -y update epel-release && \
-    cp -p /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo.backup && \
-    sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/epel.repo && \
-    rpm --import http://rpms.famillecollet.com/RPM-GPG-KEY-remi && \
-    rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm && \
-    yum -y update remi-release && \
-    rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm && \
-    yum -y update nginx-release-centos && \
-    cp -p /etc/yum.repos.d/nginx.repo /etc/yum.repos.d/nginx.repo.backup && \
-    sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/nginx.repo
+    rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 
 
 # Install SSH Service
@@ -42,11 +32,17 @@ RUN yum -y install vixie-cron crontabs
 RUN yum -y install curl-devel expat-devel gettext-devel devel zlib-devel perl-devel
 
 
-# Install php-fpm (https://webtatic.com/packages/php56/)
-RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack php-gd.x86_64 php56w-common php56w-opcache php-pecl-memcached
+# Install php-fpm (https://webtatic.com/packages/php56/
+RUN yum -y install php56w php56w-fpm php56w-mbstring php56w-xml php56w-mysql php56w-mssql php56w-pdo php56w-mcrypt php56w-gd php56w-pecl-imagick php56w-opcache php56w-pecl-memcache php56w-pecl-xdebug
+#RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack php56w-gd php56w-pecl-imagick php56w-opcache php-pecl-memcached
 
 
 # Install nginx
+RUN rpm --import http://ftp.riken.jp/Linux/fedora/epel/RPM-GPG-KEY-EPEL-6 && \
+    rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm && \
+    yum -y update nginx-release-centos && \
+    cp -p /etc/yum.repos.d/nginx.repo /etc/yum.repos.d/nginx.repo.backup && \
+    sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/nginx.repo
 RUN yum -y --enablerepo=nginx install nginx
 
 
