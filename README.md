@@ -68,7 +68,7 @@ or
     $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
     
 
-usee xec enter command change zone time in taiwan
+use exec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
