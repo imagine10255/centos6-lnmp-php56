@@ -34,7 +34,6 @@ RUN yum -y install curl-devel expat-devel gettext-devel devel zlib-devel perl-de
 
 # Install php-fpm (https://webtatic.com/packages/php56/
 RUN yum -y install php56w php56w-fpm php56w-mbstring php56w-xml php56w-mysql php56w-mssql php56w-pdo php56w-mcrypt php56w-gd php56w-pecl-imagick php56w-opcache php56w-pecl-memcache php56w-pecl-xdebug
-#RUN yum -y --enablerepo=remi-php56,remi,epel install php-fpm php-mbstring php-xml php-mysql php-pdo php-mcrypt php-pecl-msgpack php56w-gd php56w-pecl-imagick php56w-opcache php-pecl-memcached
 
 
 # Install nginx
