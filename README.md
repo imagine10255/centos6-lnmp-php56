@@ -67,11 +67,21 @@ or
 
     $ docker run --name some-mariadb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mariadb:tag
     
-
 use exec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 
+### Link Redis-Docker
+
+https://hub.docker.com/r/library/redis/
+
+    $ docker run -d -p 6379:6379 --name redis redis
+
+### Link Mariadb-Docker
+
+https://hub.docker.com/r/schickling/mailcatcher/
+
+    $ docker run -d -p 1080:1080 --name mailcatcher schickling/mailcatcher
 
 ### Composer Package
 
