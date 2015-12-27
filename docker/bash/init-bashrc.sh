@@ -35,6 +35,7 @@ fi
 \cp -fr ${CONF_PATH}php.ini /etc/php.ini
 \cp -fr ${CONF_PATH}nginx/nginx.conf /etc/nginx/nginx.conf
 \cp -fr ${CONF_PATH}nginx/plugins/*.conf /etc/nginx/plugins/
+rm -rf /etc/nginx/sites-enabled/*
 \cp -fr ${CONF_PATH}virtualhost/*.conf /etc/nginx/sites-enabled/
 
 
