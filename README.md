@@ -77,7 +77,7 @@ https://hub.docker.com/r/library/redis/
 
     $ docker run -d -p 6379:6379 --name redis redis
 
-### Link Mariadb-Docker
+### Link Mailcatcher-Docker
 
 https://hub.docker.com/r/schickling/mailcatcher/
 
