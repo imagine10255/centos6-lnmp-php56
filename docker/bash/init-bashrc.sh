@@ -55,8 +55,9 @@ fi
 
 
 # Cover profile crontab
-crontab ${CONF_PATH}crontab
-
+if [ -f "${CONF_PATH}crontab" ]; then
+  crontab ${CONF_PATH}crontab
+fi
 
 # Check Service to start
 for SERVICE in nginx php-fpm sshd crond
