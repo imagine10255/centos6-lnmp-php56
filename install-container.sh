@@ -16,9 +16,9 @@ docker run -idt \
 -p 82:82 \
 -p 8080:8080 \
 -p 3306:3306 \
--v /home/config:/home/config
--v /home/logs:/home/logs
--v /home/website:/home/website
+-v /home/config:/home/config \
+-v /home/logs:/home/logs \
+-v /home/website:/home/website \
 imagine10255/centos6-lnmp-php56:latest
 
 # enter docker-container
