@@ -6,6 +6,33 @@ WEBSITE80_PATH="/home/website/default/"
      SSH_PATH="/root/.ssh/"
 
 
+# Check Service to start
+function service_start()
+{
+    for SERVICE in nginx php-fpm sshd
+    do
+      if ! (ps ax | grep -v grep | grep $SERVICE > /dev/null)
+      then
+         service $SERVICE start;
+      fi
+    done
+}
+
+
+# Check Supervisor to start
+function service_supervisor()
+{
+    if ps ax | grep -v grep | grep /etc/supervisord.conf > /dev/null
+    then
+        RESULT="TRUE"
+    else
+        #echo "starting...";
+        supervisord -c /etc/supervisord.conf;
+    fi
+}
+
+
+
 # Create base dir
 mkdir -p $WEBSITE80_PATH
 mkdir -p $LOGS_PATH
@@ -34,7 +61,7 @@ fi
 # Cover profile nginx
 \cp -fr ${CONF_PATH}php.ini /etc/php.ini
 \cp -fr ${CONF_PATH}nginx/nginx.conf /etc/nginx/nginx.conf
-\cp -fr ${CONF_PATH}nginx/plugins/*.conf /etc/nginx/plugins/
+\cp -fr ${CONF_PATH}nginx/cnf.d/*.conf /etc/nginx/cnf.d/
 rm -rf /etc/nginx/sites-enabled/*
 \cp -fr ${CONF_PATH}virtualhost/*.conf /etc/nginx/sites-enabled/
 
@@ -54,30 +81,4 @@ fi
 \cp -fr ${CONF_PATH}supervisord.conf /etc/supervisord.conf
 
 
-# Cover profile crontab
-if [ -f "${CONF_PATH}crontab" ]; then
-  crontab ${CONF_PATH}crontab
-fi
-
-# Check Service to start
-for SERVICE in nginx php-fpm sshd crond
-do
-  if ps ax | grep -v grep | grep $SERVICE > /dev/null
-  then
-     #echo "service $SERVICE runing";
-     break;
-  else
-     service $SERVICE start;
-  fi
-done
-
-
-# Check Supervisor to start
-if ps ax | grep -v grep | grep /etc/supervisord.conf > /dev/null
-then
-     RESULT="TRUE"
-else
-     #echo "starting...";
-     supervisord -c /etc/supervisord.conf;
-fi
-
+service_start

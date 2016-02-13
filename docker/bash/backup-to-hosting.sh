@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Backup Nginx
-\cp -fr /etc/php.ini /home/wwwconfig/php.ini 
+\cp -fr /etc/php.ini /home/config/php.ini 
 \cp -fr /etc/nginx/nginx.conf /home/config/nginx/nginx.conf 
-\cp -fr /etc/nginx/plugins/* /home/config/nginx/plugins/
+\cp -fr /etc/nginx/cnf.d/* /home/config/nginx/cnf.d/
 \cp -fr /etc/nginx/sites-enabled/* /home/config/virtualhost/
 
 

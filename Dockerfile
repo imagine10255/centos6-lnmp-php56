@@ -59,6 +59,26 @@ RUN yum -y install python-setuptools && \
     echo_supervisord_conf > /etc/supervisord.conf
 
 
+# Install MariaDB(Only Client)
+RUN echo -e "[mariadb]" >> /etc/yum.repos.d/MariaDB.repo && \
+    echo -e "name = MariaDB" >> /etc/yum.repos.d/MariaDB.repo && \
+    echo -e "baseurl = http://yum.mariadb.org/10.0/centos6-amd64" >> /etc/yum.repos.d/MariaDB.repo && \
+    echo -e "gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB" >> /etc/yum.repos.d/MariaDB.repo && \
+    echo -e "gpgcheck=1" >> /etc/yum.repos.d/MariaDB.repo && \
+    yum -y install MariaDB-client
+
+
+# Install Freetds(MSSQL)
+RUN cd ~/ && \
+    wget ftp://ftp.freetds.org/pub/freetds/stable/freetds-0.95.87.tar.gz && \
+    tar zxf ./freetds-0.95.87.tar.gz && \
+    cd ./freetds-0.95.87 && \
+    ./configure --prefix=/usr/local/freetds && \
+    gmake && \
+    gmake install && \
+    rm -rf ~/freetds-0.95.87*
+
+
 # Install Git Laster Version
 RUN cd ~/ && \
     wget https://www.kernel.org/pub/software/scm/git/git-2.6.3.tar.gz && \
@@ -83,11 +103,6 @@ RUN chmod 755 /opt/docker/bash/setting-lnmp.sh && bash /opt/docker/bash/setting-
 
 # Setting DateTime Zone
 RUN cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
-
-
-# SH Tools
-RUN ln -s /opt/docker/bash/backup-to-hosting.sh /root/ && \
-    ln -s /opt/docker/bash/nginx-reload.sh /root/
 
 
 # Setup default path

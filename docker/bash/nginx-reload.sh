@@ -3,7 +3,7 @@
 # Cover profile nginx
 \cp -fr /home/config/php.ini /etc/php.ini
 \cp -fr /home/config/nginx/nginx.conf /etc/nginx/nginx.conf
-\cp -fr /home/config/nginx/plugins/*.conf /etc/nginx/plugins/
+\cp -fr /home/config/nginx/cnf.d/*.conf /etc/nginx/cnf.d/
 \cp -fr /home/config/virtualhost/*.conf /etc/nginx/sites-enabled/
 
 
