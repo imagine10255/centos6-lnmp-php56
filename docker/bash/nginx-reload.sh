@@ -3,8 +3,8 @@
 # Cover profile nginx
 \cp -fr /home/config/php.ini /etc/php.ini
 \cp -fr /home/config/nginx/nginx.conf /etc/nginx/nginx.conf
-\cp -fr /home/config/nginx/cnf.d/*.conf /etc/nginx/cnf.d/
-\cp -fr /home/config/virtualhost/*.conf /etc/nginx/sites-enabled/
+\cp -fr /home/config/nginx/sites-include/*.conf /etc/nginx/sites-include/
+\cp -fr /home/config/nginx/sites-enabled/*.conf /etc/nginx/sites-enabled/
 
 
 # Check Service to start

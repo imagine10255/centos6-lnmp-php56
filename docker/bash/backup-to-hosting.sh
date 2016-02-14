@@ -3,8 +3,8 @@
 # Backup Nginx
 \cp -fr /etc/php.ini /home/config/php.ini 
 \cp -fr /etc/nginx/nginx.conf /home/config/nginx/nginx.conf 
-\cp -fr /etc/nginx/cnf.d/* /home/config/nginx/cnf.d/
-\cp -fr /etc/nginx/sites-enabled/* /home/config/virtualhost/
+\cp -fr /etc/nginx/sites-include/* /home/config/nginx/sites-include/
+\cp -fr /etc/nginx/sites-enabled/* /home/config/nginx/sites-enabled/
 
 
 # Backup supervisor

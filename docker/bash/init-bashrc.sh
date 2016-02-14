@@ -1,9 +1,9 @@
 #!/bin/bash
 
-WEBSITE80_PATH="/home/website/default/"
-     LOGS_PATH="/home/logs/"
-     CONF_PATH="/home/config/"
-     SSH_PATH="/root/.ssh/"
+WEBSITE80_PATH="/home/website/default"
+     LOGS_PATH="/home/logs"
+     CONF_PATH="/home/config"
+     SSH_PATH="/root/.ssh"
 
 
 # Check Service to start
@@ -59,26 +59,27 @@ fi
 
 
 # Cover profile nginx
-\cp -fr ${CONF_PATH}php.ini /etc/php.ini
-\cp -fr ${CONF_PATH}nginx/nginx.conf /etc/nginx/nginx.conf
-\cp -fr ${CONF_PATH}nginx/cnf.d/*.conf /etc/nginx/cnf.d/
+\cp -fr ${CONF_PATH}/php-fpm/php.ini /etc/php.ini
+\cp -fr ${CONF_PATH}/php-fpm/www.conf /etc/php-fpm.d/www.conf 
+\cp -fr ${CONF_PATH}/nginx/nginx.conf /etc/nginx/nginx.conf
+\cp -fr ${CONF_PATH}/nginx/sites-include/*.conf /etc/nginx/sites-include/
 rm -rf /etc/nginx/sites-enabled/*
-\cp -fr ${CONF_PATH}virtualhost/*.conf /etc/nginx/sites-enabled/
+\cp -fr ${CONF_PATH}/nginx/sites-enabled/*.conf /etc/nginx/sites-enabled/
 
 
 # Cover profile ssh key
-if [ -f "${CONF_PATH}ssh-key/id_rsa.pub" ]; then
-  \cp -fr ${CONF_PATH}ssh-key/id_rsa.pub /root/.ssh/
+if [ -f "${CONF_PATH}/ssh-key/id_rsa.pub" ]; then
+  \cp -fr ${CONF_PATH}/ssh-key/id_rsa.pub /root/.ssh/
 fi
 
-if [ -f "${CONF_PATH}ssh-key/id_rsa" ]; then
-  \cp -fr ${CONF_PATH}ssh-key/id_rsa /root/.ssh/
+if [ -f "${CONF_PATH}/ssh-key/id_rsa" ]; then
+  \cp -fr ${CONF_PATH}/ssh-key/id_rsa /root/.ssh/
   chmod 400 /root/.ssh/id_rsa
 fi
 
 
 # Cover profile supervisor
-\cp -fr ${CONF_PATH}supervisord.conf /etc/supervisord.conf
+\cp -fr ${CONF_PATH}/supervisord.conf /etc/supervisord.conf
 
 
 service_start

@@ -16,7 +16,7 @@ mv /etc/php.d/xdebug.ini /etc/php.d/xdebug.ini.disable
 # Setting nginx
 mkdir /etc/nginx/sites-available
 mkdir /etc/nginx/sites-enabled
-mkdir /etc/nginx/cnf.d
+mkdir /etc/nginx/sites-include
 mkdir /usr/share/nginx/virtualhost
 cp -p /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 sed -i -e 's/include \/etc\/nginx\/conf.d\/\*.conf;/include \/etc\/nginx\/conf.d\/\*.conf;\n    include \/etc\/nginx\/sites-enabled\/\*.conf;/' /etc/nginx/nginx.conf
