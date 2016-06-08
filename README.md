@@ -133,3 +133,18 @@ delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被�
 2015-12-19 升級 git-1.7.1->2.6.3
 
 2015-12-20 新增 SSH Key 保留, Backup Config
+
+
+## extension=ssh2.so
+
+    $ yum install php56w-common
+    $ yum install libssh2 libssh2-devel make
+    $ yum install php56w-devel
+    $ pecl install ssh2-0.11.3
+    $ echo extension=ssh2.so > /etc/php.d/ssh2.ini
+    
+    確認與測試
+    
+    $ php -m | grep ssh2
+    $ php -r "ssh2_connect();"
+
