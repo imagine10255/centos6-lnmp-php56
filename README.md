@@ -134,6 +134,8 @@ delete-images.sh 刪除廢物映像檔案<none>名稱(關聯容器必須已被�
 
 2015-12-20 新增 SSH Key 保留, Backup Config
 
+2016-06-17 修改 php.ini max_input_vars 允許傳送9999個input
+
 
 ## extension=ssh2.so
 
