@@ -57,7 +57,7 @@
 - home/root/   網站相關檔案
 
 
-### Link Mariadb-Docker
+### Link Mariadb-Docker (官方版) 可選
 
 https://hub.docker.com/r/library/mariadb/
 
@@ -71,17 +71,17 @@ use exec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
     
-### Use Mariadb-Docker (imagine10255)
+### Use Mariadb-Docker (imagine10255) 可選
 
 [imagine10255/centos6-mariadb] (https://hub.docker.com/r/imagine10255/centos6-mariadb)
 
-### Link Redis-Docker
+### Link Redis-Docker 可選
 
 https://hub.docker.com/r/library/redis/
 
     $ docker run -d -p 6379:6379 --name redis redis
 
-### Link Mailcatcher-Docker
+### Link Mailcatcher-Docker 可選
 
 https://hub.docker.com/r/schickling/mailcatcher/
 
