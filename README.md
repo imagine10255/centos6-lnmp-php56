@@ -1,8 +1,8 @@
 ![Nginx1.8](https://img.shields.io/badge/nginx-1.8-brightgreen.svg) ![PHP5.6](https://img.shields.io/badge/php-5.6-brightgreen.svg)
 
-預設3個網站 80,81,82 (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
+預設網站 80 Port (含有優雅連結,Nginx快取設定) + Composer功能 並能正常運行 PHP Framework Laravel5
 
-- 可修改 nginx 與 3個網站的設定資料
+- 可修改 nginx 與 host 設定多個網站的 對應資料
 
 - 可搭配 [Kitematic](https://www.docker.com/docker-toolbox) 使用 ([DockerHub Link](https://hub.docker.com/r/imagine10255/centos6-lnmp-php56/))
 
