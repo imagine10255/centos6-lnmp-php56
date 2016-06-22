@@ -70,6 +70,10 @@ or
 use exec enter command change zone time in taiwan
 
     $ cp -p /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+    
+### Use Mariadb-Docker (imagine10255)
+
+[imagine10255/centos6-mariadb] (https://hub.docker.com/r/imagine10255/centos6-mariadb)
 
 ### Link Redis-Docker
 
