@@ -33,7 +33,12 @@ RUN yum -y install curl-devel expat-devel gettext-devel devel zlib-devel perl-de
 
 
 # Install php-fpm (https://webtatic.com/packages/php56/
-RUN yum -y install php56w php56w-fpm php56w-mbstring php56w-xml php56w-mysql php56w-mssql php56w-pdo php56w-mcrypt php56w-gd php56w-pecl-imagick php56w-opcache php56w-pecl-memcache php56w-pecl-xdebug
+RUN yum -y install php56w php56w-fpm php56w-mbstring php56w-xml php56w-mysql php56w-pdo php56w-gd php56w-pecl-imagick php56w-opcache php56w-pecl-memcache php56w-pecl-xdebug
+
+
+# Install php-mssql,mcrypt
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+RUN yum -y install php56w-mssql php56w-mcrypt
 
 
 # Install nginx
