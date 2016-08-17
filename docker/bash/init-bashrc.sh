@@ -77,9 +77,10 @@ if [ -f "${CONF_PATH}/ssh-key/id_rsa" ]; then
   chmod 400 /root/.ssh/id_rsa
 fi
 
+# Setting SSH Password By ENV
+echo "${SSH_PASSWORD}" | passwd "root" --stdin
 
 # Cover profile supervisor
 \cp -fr ${CONF_PATH}/supervisord.conf /etc/supervisord.conf
-
 
 service_start
