@@ -78,7 +78,7 @@ if [ -f "${CONF_PATH}/ssh-key/id_rsa" ]; then
 fi
 
 # Setting SSH Password By ENV
-echo "${SSH_PASSWORD}" | passwd "root" --stdin
+#echo "${SSH_PASSWORD}" | passwd "root" --stdin
 
 # Cover profile supervisor
 \cp -fr ${CONF_PATH}/supervisord.conf /etc/supervisord.conf
