@@ -11,9 +11,6 @@ create_container()
     docker run -idt \
     --name "$2" \
     -p 80:80 \
-    -p 81:81 \
-    -p 82:82 \
-    -p 8080:8080 \
     -p 8022:22 \
     -v /home/config:/home/config \
     -v /home/logs:/home/logs \
